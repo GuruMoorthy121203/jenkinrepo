@@ -5,14 +5,14 @@ pipeline {
         stage('compile') {
             steps {
                 echo 'compile in progress '
-                bat "javac Main.java"
+                bat 'javac Main.java'
             }
         }
        
         stage('run') {
             steps {
                 echo 'deploy in progress '
-                bat "java Main"
+                bat 'java Main'
             }
         }
 }
