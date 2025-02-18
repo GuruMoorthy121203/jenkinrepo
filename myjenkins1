@@ -2,19 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage('compile') {
             steps {
-                echo 'build in progress '
+                echo 'compile in progress '
+                bat "javac Main.java"
             }
         }
-        stage('test') {
-            steps {
-                echo 'test in progress '
-            }
-        }
-        stage('deploy') {
+       
+        stage('run') {
             steps {
                 echo 'deploy in progress '
+                bat "java Main"
             }
         }
 }
