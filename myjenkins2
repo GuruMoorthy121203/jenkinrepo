@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+         stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'Html.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+            }
+        }
+        stage('Run') {
+            steps {
+                echo 'Running successfully'
+            }
+        }
+    }
+}
